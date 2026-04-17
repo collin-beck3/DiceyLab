@@ -18,6 +18,22 @@ public static void main(String[] args) {
         double percentage = (bins.getCount(i) * 100.0) / numrolls; 
         System.out.printf("Total %d: %5d times (%.2f%%)%n", i, bins.getCount(i), percentage); 
     }
+
+    System.out.println("\nHistogram: ");
+    for (int i = 2; i <= 12; i++) { 
+        double percentage = (bins.getCount(i) * 100.0) / numrolls; 
+        String bar = makeBar(percentage);
+        System.out.printf("Total %2d: %-20s %.2f%%%n", i, bar, percentage); 
+    }
+}
+
+public static String makeBar(double percentage) { 
+    int blocks = (int) percentage; 
+    String bar = ""; 
+    for (int i = 0; i < blocks; i++) {
+        bar += "*"; 
+    }
+    return bar; 
 }
 }
 

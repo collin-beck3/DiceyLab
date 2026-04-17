@@ -19,6 +19,4 @@ public class Dice {
         }
         return total;
     }
-
-
 }
